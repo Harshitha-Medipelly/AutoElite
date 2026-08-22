@@ -8,7 +8,7 @@
 
 # 🚀 LIVE DEMO
 
-### 👉 https://auto-elite-upfs.vercel.app/login
+### 👉 https://auto-elite-upfs.vercel.app
 
 ### 🔐 DEMO LOGIN
 
