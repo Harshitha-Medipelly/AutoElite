@@ -6,7 +6,7 @@ A modern dealership operations workspace for inventory, sales, customers, test d
 
 🌐 LIVE DEMO
 
-🚀 Open AutoElite Live Application
+[🚀 Open AutoElite Live Application](https://auto-elite-upfs.vercel.app/login)
 
 🔐 DEMO LOGIN
 
