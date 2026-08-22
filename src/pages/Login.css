@@ -1,0 +1,1226 @@
+/* =========================================================
+   AUTOELITE LOGIN PAGE
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+.autoelite-login-page {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(520px, 1fr);
+  background: #050912;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   LEFT HERO
+   ========================================================= */
+
+.autoelite-login-hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 56px 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(3, 8, 16, 0.72) 0%,
+      rgba(3, 8, 16, 0.46) 55%,
+      rgba(3, 8, 16, 0.82) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(3, 8, 16, 0.12) 0%,
+      rgba(3, 8, 16, 0.86) 100%
+    ),
+    url("/login-car.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-right: 1px solid rgba(255, 255, 255, 0.055);
+}
+
+.autoelite-login-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 35% 25%,
+      rgba(40, 215, 255, 0.09),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 70% 55%,
+      rgba(139, 92, 246, 0.08),
+      transparent 30%
+    );
+}
+
+.autoelite-login-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 80px 80px;
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    transparent 80%
+  );
+}
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.autoelite-login-logo {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  width: fit-content;
+}
+
+.autoelite-login-logo-mark {
+  width: 56px;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 17px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #18e0c4,
+      #28d7ff 52%,
+      #8b5cf6
+    );
+
+  color: #041016;
+
+  box-shadow:
+    0 15px 45px rgba(24, 224, 196, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+
+.autoelite-login-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.autoelite-login-logo-name {
+  font-size: 25px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  color: #ffffff;
+}
+
+.autoelite-login-logo-name span {
+  color: #18e0c4;
+}
+
+.autoelite-login-logo-subtitle {
+  margin-top: 7px;
+
+  font-size: 9px;
+  line-height: 1;
+
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+
+  color: rgba(148, 163, 184, 0.75);
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.autoelite-login-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: min(760px, 100%);
+  margin-top: auto;
+  margin-bottom: auto;
+
+  padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.autoelite-login-badge {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 11px 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.055);
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 10px 40px rgba(0, 0, 0, 0.18);
+}
+
+.autoelite-login-badge-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background: #18e0c4;
+
+  box-shadow:
+    0 0 0 5px rgba(24, 224, 196, 0.06),
+    0 0 14px rgba(24, 224, 196, 0.85);
+}
+
+.autoelite-login-badge-text {
+  font-size: 11px;
+  line-height: 1;
+
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: rgba(226, 232, 240, 0.82);
+}
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.autoelite-login-hero-title {
+  max-width: 760px;
+
+  margin: 36px 0 0;
+
+  font-size: clamp(58px, 5vw, 92px);
+  line-height: 0.94;
+
+  font-weight: 850;
+  letter-spacing: -0.065em;
+
+  color: #ffffff;
+}
+
+.gradient-text {
+  display: inline;
+
+  background:
+    linear-gradient(
+      110deg,
+      #18e0c4 0%,
+      #28d7ff 48%,
+      #8b5cf6 100%
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* =========================================================
+   HERO DESCRIPTION
+   ========================================================= */
+
+.autoelite-login-hero-description {
+  max-width: 650px;
+
+  margin-top: 32px;
+
+  font-size: 18px;
+  line-height: 1.7;
+
+  font-weight: 450;
+
+  color: rgba(203, 213, 225, 0.72);
+}
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.autoelite-login-features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 44px;
+}
+
+.autoelite-login-feature {
+  min-height: 116px;
+
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+
+  padding: 18px;
+
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 17px;
+
+  background: rgba(5, 13, 24, 0.48);
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.autoelite-login-feature:hover {
+  transform: translateY(-3px);
+
+  border-color: rgba(24, 224, 196, 0.2);
+
+  background: rgba(8, 22, 34, 0.68);
+}
+
+.autoelite-login-feature-icon {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 11px;
+
+  color: #18e0c4;
+
+  background: rgba(24, 224, 196, 0.08);
+
+  border: 1px solid rgba(24, 224, 196, 0.12);
+}
+
+.autoelite-login-feature-title {
+  font-size: 13px;
+  line-height: 1.35;
+
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+.autoelite-login-feature-description {
+  margin-top: 6px;
+
+  font-size: 10px;
+  line-height: 1.5;
+
+  color: rgba(148, 163, 184, 0.7);
+}
+
+/* =========================================================
+   RIGHT PANEL
+   ========================================================= */
+
+.autoelite-login-panel {
+  position: relative;
+
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+
+  padding: 64px 7%;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(24, 224, 196, 0.045),
+      transparent 27%
+    ),
+    radial-gradient(
+      circle at 85% 80%,
+      rgba(139, 92, 246, 0.045),
+      transparent 30%
+    ),
+    #050912;
+}
+
+.autoelite-login-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.014) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 72px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent
+  );
+}
+
+.autoelite-login-container {
+  position: relative;
+  z-index: 2;
+
+  width: min(620px, 100%);
+
+  margin: auto 0;
+}
+
+/* =========================================================
+   SECURE WORKSPACE
+   ========================================================= */
+
+.autoelite-login-secure {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.autoelite-login-secure-icon {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  color: #18e0c4;
+
+  background: rgba(24, 224, 196, 0.06);
+
+  border: 1px solid rgba(24, 224, 196, 0.14);
+
+  box-shadow:
+    0 0 30px rgba(24, 224, 196, 0.04);
+}
+
+.autoelite-login-secure-text {
+  font-size: 12px;
+
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+
+  color: #18e0c4;
+}
+
+/* =========================================================
+   LOGIN HEADING
+   ========================================================= */
+
+.autoelite-login-title {
+  margin: 35px 0 0;
+
+  font-size: clamp(46px, 4vw, 66px);
+  line-height: 1;
+
+  font-weight: 850;
+  letter-spacing: -0.06em;
+
+  color: #ffffff;
+}
+
+.autoelite-login-subtitle {
+  margin-top: 16px;
+
+  font-size: 16px;
+  line-height: 1.6;
+
+  color: rgba(148, 163, 184, 0.78);
+}
+
+/* =========================================================
+   LOGIN CARD
+   ========================================================= */
+
+.autoelite-login-card {
+  width: 100%;
+
+  margin-top: 40px;
+
+  padding: 34px;
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13, 28, 43, 0.92),
+      rgba(7, 16, 28, 0.92)
+    );
+
+  box-shadow:
+    0 30px 90px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+.autoelite-login-form {
+  width: 100%;
+}
+
+.autoelite-login-field {
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.autoelite-login-field-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 11px;
+}
+
+.autoelite-login-label {
+  font-size: 11px;
+
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+
+  color: rgba(148, 163, 184, 0.82);
+}
+
+.autoelite-login-forgot {
+  border: 0;
+  background: transparent;
+
+  padding: 0;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  color: #18e0c4;
+
+  cursor: pointer;
+
+  transition: color 160ms ease;
+}
+
+.autoelite-login-forgot:hover {
+  color: #67f5df;
+}
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.autoelite-login-input-wrapper {
+  position: relative;
+
+  width: 100%;
+}
+
+.autoelite-login-input {
+  width: 100%;
+  height: 62px;
+
+  padding: 0 52px 0 58px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255, 255, 255, 0.085);
+
+  outline: none;
+
+  background: rgba(255, 255, 255, 0.025);
+
+  color: #f8fafc;
+
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 500;
+
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.autoelite-login-input::placeholder {
+  color: rgba(100, 116, 139, 0.8);
+}
+
+.autoelite-login-input:hover {
+  border-color: rgba(255, 255, 255, 0.13);
+}
+
+.autoelite-login-input:focus {
+  border-color: rgba(24, 224, 196, 0.42);
+
+  background: rgba(24, 224, 196, 0.025);
+
+  box-shadow:
+    0 0 0 4px rgba(24, 224, 196, 0.055),
+    0 12px 35px rgba(0, 0, 0, 0.14);
+}
+
+.autoelite-login-input-icon {
+  position: absolute;
+
+  left: 19px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: rgba(100, 116, 139, 0.9);
+
+  pointer-events: none;
+}
+
+.autoelite-login-password-toggle {
+  position: absolute;
+
+  right: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 0;
+  border-radius: 9px;
+
+  background: transparent;
+
+  color: rgba(100, 116, 139, 0.9);
+
+  cursor: pointer;
+
+  transition:
+    color 160ms ease,
+    background 160ms ease;
+}
+
+.autoelite-login-password-toggle:hover {
+  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.045);
+}
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.autoelite-login-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 3px;
+}
+
+.autoelite-login-remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  font-size: 11px;
+
+  color: rgba(148, 163, 184, 0.72);
+
+  cursor: pointer;
+}
+
+.autoelite-login-checkbox {
+  appearance: none;
+
+  width: 20px;
+  height: 20px;
+
+  margin: 0;
+
+  border-radius: 6px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.025);
+
+  cursor: pointer;
+
+  position: relative;
+}
+
+.autoelite-login-checkbox:checked {
+  border-color: #18e0c4;
+  background: #18e0c4;
+}
+
+.autoelite-login-checkbox:checked::after {
+  content: "✓";
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -53%);
+
+  color: #041016;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.autoelite-login-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  font-size: 11px;
+
+  color: rgba(148, 163, 184, 0.72);
+}
+
+.autoelite-login-status-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 999px;
+
+  background: #22c55e;
+
+  box-shadow:
+    0 0 14px rgba(34, 197, 94, 0.7);
+}
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+.autoelite-login-error {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+
+  margin-top: 18px;
+
+  padding: 12px 14px;
+
+  border-radius: 12px;
+
+  border: 1px solid rgba(239, 68, 68, 0.16);
+
+  background: rgba(239, 68, 68, 0.07);
+
+  color: #fca5a5;
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   LOGIN BUTTON
+   ========================================================= */
+
+.autoelite-login-button {
+  width: 100%;
+  height: 62px;
+
+  margin-top: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+
+  border: 0;
+  border-radius: 16px;
+
+  background:
+    linear-gradient(
+      100deg,
+      #18e0c4 0%,
+      #28d7ff 48%,
+      #8b5cf6 100%
+    );
+
+  color: #031014;
+
+  font-family: inherit;
+
+  font-size: 14px;
+  font-weight: 850;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 16px 42px rgba(24, 224, 196, 0.13);
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.autoelite-login-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+
+  filter: brightness(1.06);
+
+  box-shadow:
+    0 20px 52px rgba(24, 224, 196, 0.2);
+}
+
+.autoelite-login-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.autoelite-login-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.autoelite-login-button-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* =========================================================
+   SPINNER
+   ========================================================= */
+
+.autoelite-login-spinner {
+  width: 17px;
+  height: 17px;
+
+  border-radius: 50%;
+
+  border: 2px solid rgba(3, 16, 20, 0.28);
+  border-top-color: #031014;
+
+  animation: autoelite-login-spin 700ms linear infinite;
+}
+
+@keyframes autoelite-login-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.autoelite-login-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  margin: 29px 0 19px;
+}
+
+.autoelite-login-divider::before,
+.autoelite-login-divider::after {
+  content: "";
+
+  height: 1px;
+
+  flex: 1;
+
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.autoelite-login-divider span {
+  font-size: 9px;
+
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+
+  color: rgba(100, 116, 139, 0.78);
+}
+
+/* =========================================================
+   DEMO HEADER
+   ========================================================= */
+
+.autoelite-login-demo-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 11px;
+}
+
+.autoelite-login-demo-label {
+  font-size: 11px;
+
+  font-weight: 700;
+
+  color: #f8fafc;
+}
+
+.autoelite-login-demo-action {
+  font-size: 10px;
+
+  font-weight: 700;
+
+  color: #18e0c4;
+}
+
+/* =========================================================
+   DEMO CARD
+   ========================================================= */
+
+.autoelite-login-demo-card {
+  min-height: 74px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  padding: 13px 14px;
+
+  border-radius: 15px;
+
+  border: 1px solid rgba(255, 255, 255, 0.07);
+
+  background: rgba(255, 255, 255, 0.022);
+}
+
+.autoelite-login-demo-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-width: 0;
+}
+
+.autoelite-login-demo-avatar {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  color: #18e0c4;
+
+  background: rgba(24, 224, 196, 0.07);
+
+  border: 1px solid rgba(24, 224, 196, 0.13);
+}
+
+.autoelite-login-demo-info {
+  min-width: 0;
+}
+
+.autoelite-login-demo-name {
+  font-size: 12px;
+  font-weight: 750;
+
+  color: #f8fafc;
+}
+
+.autoelite-login-demo-email {
+  margin-top: 4px;
+
+  font-size: 10px;
+
+  color: rgba(100, 116, 139, 0.95);
+
+  white-space: nowrap;
+}
+
+.autoelite-login-demo-button {
+  height: 38px;
+
+  flex-shrink: 0;
+
+  padding: 0 15px;
+
+  border-radius: 10px;
+
+  border: 1px solid rgba(24, 224, 196, 0.18);
+
+  background: rgba(24, 224, 196, 0.055);
+
+  color: #18e0c4;
+
+  font-family: inherit;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.autoelite-login-demo-button:hover {
+  background: rgba(24, 224, 196, 0.12);
+
+  border-color: rgba(24, 224, 196, 0.32);
+
+  color: #67f5df;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.autoelite-login-footer {
+  margin-top: 23px;
+
+  text-align: center;
+
+  font-size: 9px;
+
+  line-height: 1.5;
+
+  color: rgba(71, 85, 105, 0.9);
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1250px) {
+  .autoelite-login-page {
+    grid-template-columns:
+      minmax(0, 0.9fr)
+      minmax(500px, 1.1fr);
+  }
+
+  .autoelite-login-hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .autoelite-login-panel {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .autoelite-login-hero-title {
+    font-size: clamp(52px, 5vw, 76px);
+  }
+}
+
+@media (max-width: 1050px) {
+  .autoelite-login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .autoelite-login-hero {
+    min-height: 620px;
+    padding: 45px 7%;
+  }
+
+  .autoelite-login-panel {
+    min-height: auto;
+    padding: 70px 7%;
+  }
+
+  .autoelite-login-container {
+    margin: 0 auto;
+  }
+
+  .autoelite-login-hero-title {
+    max-width: 800px;
+  }
+
+  .autoelite-login-hero-description {
+    max-width: 700px;
+  }
+}
+
+@media (max-width: 700px) {
+  .autoelite-login-hero {
+    min-height: 570px;
+    padding: 30px 22px;
+  }
+
+  .autoelite-login-panel {
+    padding: 45px 22px 60px;
+  }
+
+  .autoelite-login-hero-content {
+    padding-top: 70px;
+    padding-bottom: 20px;
+  }
+
+  .autoelite-login-hero-title {
+    margin-top: 28px;
+
+    font-size: clamp(48px, 13vw, 70px);
+  }
+
+  .autoelite-login-hero-description {
+    margin-top: 23px;
+
+    font-size: 15px;
+  }
+
+  .autoelite-login-features {
+    grid-template-columns: 1fr;
+    gap: 10px;
+
+    margin-top: 30px;
+  }
+
+  .autoelite-login-feature {
+    min-height: auto;
+  }
+
+  .autoelite-login-card {
+    padding: 24px 20px;
+    border-radius: 20px;
+  }
+
+  .autoelite-login-title {
+    font-size: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .autoelite-login-logo-mark {
+    width: 48px;
+    height: 48px;
+  }
+
+  .autoelite-login-logo-name {
+    font-size: 21px;
+  }
+
+  .autoelite-login-badge {
+    padding: 9px 13px;
+  }
+
+  .autoelite-login-badge-text {
+    font-size: 9px;
+  }
+
+  .autoelite-login-hero-title {
+    font-size: 48px;
+  }
+
+  .autoelite-login-title {
+    font-size: 40px;
+  }
+
+  .autoelite-login-card {
+    padding: 21px 17px;
+  }
+
+  .autoelite-login-meta {
+    align-items: flex-start;
+    gap: 14px;
+    flex-direction: column;
+  }
+
+  .autoelite-login-demo-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .autoelite-login-demo-button {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgba(24, 224, 196, 0.55);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
